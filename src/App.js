@@ -5,6 +5,7 @@ import Nav from "./Nav";
 import React from "react";
 import Employeeform from "./Form";
 import Aboutus from "./Aboutus";
+import TableForm from "./components/TableForm";
 function App() {
   return (
     <div>
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" exact component={Aboutus} />
           <Route path="/aboutus" exact component={Aboutus} />
           <Route path="/form" exact component={Employeeform} />
+         < Route path="/table" exact component={TableForm} />
         </Switch>
       </Router>
     </div>

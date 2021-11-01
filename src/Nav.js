@@ -26,6 +26,12 @@ class Nav extends React.Component {
           <Link to="/form">
             <Menu.Item style={{color: "white"}}>Form</Menu.Item>
           </Link>
+          <Link to="/table">
+            <Menu.Item style={{color: "white"}}>Table</Menu.Item>
+          </Link>
+          
+          
+          
         </Menu>
       </div>
     );

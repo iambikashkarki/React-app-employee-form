@@ -2,7 +2,24 @@ import React from "react";
 import "antd/dist/antd.css";
 import { Form, Button, Input, DatePicker, Divider, Radio } from "antd";
 
+
+
+
+
 export default function Employeeform() {
+ 
+  const onFinish = (values) => {
+    const employee = JSON.parse(localStorage.getItem("employeeRecord"));
+    let employees = [];
+
+    if (employee) {
+      employees = [...employee, values];
+    } else {
+      employees = [values];
+    }
+
+    localStorage.setItem("employeeRecord", JSON.stringify(employees));
+  };
   return (
     <div style={{border:"1px solid",width:"800px",borderRadius:"10px 10px 10px 10px",marginTop:"20px",marginLeft:"23%"}}>
       <div class="mt-3">
@@ -12,8 +29,7 @@ export default function Employeeform() {
       <div class="container py-3">
         <Form
           name="employeeform"
-          //   onFinishFailed={() => alert("Failed to submit")}
-          onFinish={() => alert("Form Submitted Successfully")}
+          onFinish={onFinish}
           initialValues={{ remember: true }}
           labelCol={{ span: 4 }}
           wrapperCol={{ span: 18 }}
@@ -83,6 +99,7 @@ export default function Employeeform() {
             </Button>
           </Form.Item>
           </Form>
+         
       </div>
     </div>
   );
